@@ -1,37 +1,26 @@
 # Logistics & Transport Cost Model: Rock Climbing Championship
 
-## Overview
-This project is an Excel-based logistics model designed to calculate and optimize transport costs for a women's rock climbing championship. It tracks the movement of 24 athletes across 67 competitions, calculating the most efficient transit routes between remote locations in a National Park.
+The challenge in managing a women's rock climbing championship across a National Park isn't just about scheduling; it's about controlling the underlying transport costs. With 24 athletes competing across 67 different events, manual routing between remote locations quickly becomes a logistical bottleneck and a budget drain. I built this Excel-based model to automate that exact problem.
+
+To solve this, I needed a way to dynamically track where each athlete was in the tournament bracket and calculate the cost of getting them to their next wall. I used a multi-variable distance matrix containing all the park's locations. Instead of mapping routes by hand, the spreadsheet acts as a calculation engine. By combining COUNTIF logic to track athlete progression with nested INDEX and MATCH arrays, the model automatically pulls the precise transit cost for every single movement directly from the raw data.
 
 ![Transport Matrix Input](transport_matrix.png)
-*Snapshot of the multi-variable distance matrix.*
+Snapshot of the multi-variable distance matrix used as the primary data source.
 
-## Repository Structure
-**Logistics_Model_Final.xlsx**: The main calculation engine and scenario dashboard.
-**raw_tournament_data.csv**: Base dataset containing athlete progression and locations.
-
-## Technical Implementation
-The model relies on nested lookup functions and conditional logic to automate the budgeting process rather than manual routing:  
-**Movement Tracking:** Implemented COUNTIF (CONTAR.SI) to dynamically track each athlete's progression through the tournament brackets.  
-**Cost Extraction:** Used INDEX and MATCH arrays to pull exact transport costs from the primary distance matrix based on origin and destination variables.  
-**Scenario Modeling:** Built a comparative scenario to evaluate the financial impact of shifting the logistical starting hub from Clarkson Town to Orange Grove.  
+Once the automated tracking was in place, the data allowed for a deeper strategic look at the event's budget. Beyond just calculating the total operational cost, I ran a scenario analysis to see what would happen if we changed the logistical starting hub from Clarkson Town to Orange Grove. The model quantified the exact financial impact of that pivot, identifying clear potential savings. 
 
 ![Calculation Logic](calculation_engine.png)
-*Detail of the spreadsheet logic and array functions.*
+Detail of the lookup logic used to extract costs based on origin and destination variables.
 
-## Key Insights & Results
-**Total Operational Cost:** Comprehensive calculation of the entire championship's transport budget.  
-**Segmented Analysis:** Cost tracking isolated for specific high-profile athletes and high-traffic locations.  
-**Strategic Pivot:** Identified and quantified the financial impact and potential savings of changing the initial logistical starting point.  
+Ultimately, this project takes raw tournament schedules and turns them into a segmented budget, isolating costs for high-traffic locations and tracking specific high-profile athletes. It provides a clean, automated answer to the operational costs of the event. 
+
+The next technical step for this kind of logistical problem would be migrating the raw data and routing logic into a relational SQL database, which would allow for scaling the operation to handle multiple tournament schedules simultaneously.
 
 ![Final Cost Analysis](final_cost_analysis.png)
-*Final budget comparison and optimization output.*
+Final budget comparison and optimization output.
 
-## Tools & Skills Used
-**Data Analysis:** Advanced Excel (Conditional Logic, Matrix Arrays, Indexing).  
-**Domain Logic:** Logistics modeling, asset movement tracking, and redundant travel elimination.  
+Repository contents:
+- Logistics_Model_Final.xlsx
+- raw_tournament_data.csv
 
-## Future Scope
-Migrating the raw data and routing logic to a relational SQL database to handle larger, multi-tournament schedules and automate complex routing queries.  
-
-> **Note:** The dataset and internal formulas are maintained in Spanish as per the original source, while this documentation is provided in English for global accessibility.
+Note: The dataset and internal formulas are maintained in Spanish as per the original source. This documentation is provided in English for global accessibility.
