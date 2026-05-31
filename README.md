@@ -20,6 +20,8 @@ The next technical step for this kind of logistical problem would be migrating t
 ![Final Cost Analysis](final_cost_analysis.png)
 Final budget comparison and optimization output.
 
+This project was developed as a simulated business case study provided by A2 Capacitación, designed to model and solve real-world logistical and budget optimization challenges.
+
 Repository contents:
 - Logistics_Model_Final.xlsx
 - raw_tournament_data.csv
