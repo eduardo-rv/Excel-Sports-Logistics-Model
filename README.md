@@ -1,4 +1,5 @@
 # Logistics & Transport Cost Model: Rock Climbing Championship
+![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white) ![Data Modeling](https://img.shields.io/badge/Data_Modeling-000000?style=flat-square)
 
 The challenge in managing a women's rock climbing championship across a National Park isn't just about scheduling; it's about controlling the underlying transport costs. With 24 athletes competing across 67 different events, manual routing between remote locations quickly becomes a logistical bottleneck and a budget drain. I built this Excel-based model to automate that exact problem.
 
